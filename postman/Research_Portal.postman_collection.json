@@ -1,0 +1,66 @@
+{
+  "info": {
+    "name": "Research Opportunity Portal",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:5000/api/opportunities" }
+  ],
+  "item": [
+    {
+      "name": "1. Create Opportunity",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"AI for Healthcare\",\n  \"description\": \"ML models for disease detection\",\n  \"research_area\": \"Artificial Intelligence\",\n  \"required_skills\": \"Python, TensorFlow\",\n  \"available_positions\": 2,\n  \"application_deadline\": \"2025-12-31\",\n  \"status\": \"Open\"\n}"
+        },
+        "url": { "raw": "{{baseUrl}}", "host": ["{{baseUrl}}"] }
+      }
+    },
+    {
+      "name": "2. Get All Opportunities",
+      "request": { "method": "GET", "url": { "raw": "{{baseUrl}}" } }
+    },
+    {
+      "name": "3. Get One Opportunity",
+      "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/1" } }
+    },
+    {
+      "name": "4. Update Opportunity",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"title\": \"Updated Title\",\n  \"available_positions\": 5\n}" },
+        "url": { "raw": "{{baseUrl}}/1" }
+      }
+    },
+    {
+      "name": "5. Close Opportunity (Open -> Closed)",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"status\": \"Closed\"\n}" },
+        "url": { "raw": "{{baseUrl}}/1" }
+      }
+    },
+    {
+      "name": "6. Delete Opportunity",
+      "request": { "method": "DELETE", "url": { "raw": "{{baseUrl}}/1" } }
+    },
+    {
+      "name": "7. Get Deleted Opportunity (404 Test)",
+      "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/1" } }
+    },
+    {
+      "name": "8. Invalid Request (400 Test)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"description\": \"Missing title and research_area\"\n}" },
+        "url": { "raw": "{{baseUrl}}" }
+      }
+    }
+  ]
+}
