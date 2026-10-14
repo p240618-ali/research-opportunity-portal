@@ -8,7 +8,7 @@ A web-based application that allows faculty members to post, view, update, and m
 🔗 GITHUB REPOSITORY
 -------------------------------------------------------
 
-https://p240618-ali/research-opportunity-portal
+https://github.com/p240618-ali/research-opportunity-portal
 
 
 
