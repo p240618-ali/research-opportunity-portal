@@ -192,20 +192,6 @@ STEP 7 — Test the API with Postman
    8. Invalid Request            → 400 Bad Request
 
 
--------------------------------------------------------
-🔌 API ENDPOINTS REFERENCE
--------------------------------------------------------
-
-Base URL: http://localhost:5000/api/opportunities
-
-Method  Endpoint   Description
-------  ---------  ------------------------------------
-POST    /          Create a new opportunity
-GET     /          Retrieve all opportunities
-GET     /:id       Retrieve one opportunity by ID
-PUT     /:id       Update an existing opportunity
-DELETE  /:id       Delete an opportunity
-
 
 
 -------------------------------------------------------
@@ -214,7 +200,6 @@ DELETE  /:id       Delete an opportunity
 
 Name:      Syed Ali Hussain Shah
 Index No:  P24_0618
-Class:     Your Class
 Module:    Software Development 
 Date:      October 2025
 
